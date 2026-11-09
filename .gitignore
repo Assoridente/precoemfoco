@@ -6,3 +6,5 @@ IndicesPreços.zip
 dist/
 *.key
 *.pem
+deploy/*.pub
+deploy/oci-known-hosts

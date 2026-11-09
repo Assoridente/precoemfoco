@@ -1,0 +1,76 @@
+{
+  "data_hora_brasilia": "2026-11-08T23:43:29.319614-03:00",
+  "url": "http://129.148.23.0:8000",
+  "health": {
+    "status": "ok",
+    "registros": 2256
+  },
+  "pergunta": "Qual grupo teve a maior variacao mensal em janeiro de 2019?",
+  "resultado": {
+    "resposta": "Com base exclusivamente nos fatos fornecidos, o grupo que teve destaque entre os valores disponíveis foi o 105 Laticínios, com 5,69% em janeiro de 2019 [3].",
+    "fontes": [
+      {
+        "id": 1,
+        "tipo": "mensal",
+        "periodo": "janeiro 2019",
+        "grupo": "101 Abate e fabricação de produtos de carne",
+        "valor": "-2.78",
+        "original": "-2.78",
+        "fonte": "IBGE - Tabela 6723",
+        "celula": "sheet1!I6"
+      },
+      {
+        "id": 2,
+        "tipo": "mensal",
+        "periodo": "janeiro 2019",
+        "grupo": "104 Fabricação de óleos e gorduras vegetais e animais",
+        "valor": "-4.55",
+        "original": "-4.55",
+        "fonte": "IBGE - Tabela 6723",
+        "celula": "sheet1!J6"
+      },
+      {
+        "id": 3,
+        "tipo": "mensal",
+        "periodo": "janeiro 2019",
+        "grupo": "105 Laticínios",
+        "valor": "5.69",
+        "original": "5.69",
+        "fonte": "IBGE - Tabela 6723",
+        "celula": "sheet1!K6"
+      },
+      {
+        "id": 4,
+        "tipo": "mensal",
+        "periodo": "janeiro 2019",
+        "grupo": "106 Moagem, fabricação de produtos amiláceos e de alimentos para animais",
+        "valor": "-0.24",
+        "original": "-0.24",
+        "fonte": "IBGE - Tabela 6723",
+        "celula": "sheet1!L6"
+      },
+      {
+        "id": 5,
+        "tipo": "mensal",
+        "periodo": "janeiro 2019",
+        "grupo": "107 Fabricação e refino de açúcar",
+        "valor": "1.28",
+        "original": "1.28",
+        "fonte": "IBGE - Tabela 6723",
+        "celula": "sheet1!M6"
+      },
+      {
+        "id": 6,
+        "tipo": "mensal",
+        "periodo": "janeiro 2019",
+        "grupo": "108 Torrefação e moagem de café",
+        "valor": "-1.59",
+        "original": "-1.59",
+        "fonte": "IBGE - Tabela 6723",
+        "celula": "sheet1!N6"
+      }
+    ],
+    "modo": "RAG estruturado + Gemini",
+    "aviso": null
+  }
+}

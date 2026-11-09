@@ -2,6 +2,12 @@
 
 As versões registram as etapas reais deste projeto. Os commits posteriores à base inicial foram organizados por assunto a partir das alterações feitas durante o desenvolvimento, sem alterar datas ou inventar etapas anteriores.
 
+## v1.1.0 — Deploy na OCI
+
+- Aplicação publicada em OCI Compute com Docker, Ubuntu 24.04 e acesso público na porta 8000.
+- Validação externa do endpoint de saúde e de resposta Gemini com fontes da base.
+- Roteiro atualizado para a hospedagem de demonstração com créditos de avaliação.
+
 ## v1.0.0 — Documentação da versão local
 
 - Descrição da base documental, dicionário de dados e FAQ.

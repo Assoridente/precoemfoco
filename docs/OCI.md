@@ -1,6 +1,14 @@
 # Deploy na Oracle Cloud Infrastructure
 
-Este roteiro prepara uma demonstração em OCI Compute. A instância, a conta e o deploy não foram criados automaticamente. Confirme preços e limites da sua conta antes de provisionar.
+Aplicação publicada e validada em 08/11/2026: [http://129.148.23.0:8000](http://129.148.23.0:8000).
+
+O deploy usa Ubuntu 24.04, Docker, 1 OCPU e 4 GB de RAM em uma `VM.Standard.E3.Flex`, na região São Paulo. E2 Micro e Ampere A1 retornaram falta de capacidade; a alternativa E3 foi autorizada com os créditos da conta de avaliação, identificada no console como Free Tier/Promo. Não foi feito upgrade para Pay As You Go.
+
+A E3 não é Always Free. A demonstração depende do saldo e da validade dos créditos de avaliação. O desligamento programado ainda precisa ser confirmado no console; não considere que já existe um agendamento. O disco pode continuar alocado depois de parar uma VM.
+
+Foi validado o endpoint público `/health` e uma pergunta respondida por Gemini. O registro está em [evidencias/validacao-oci.json](evidencias/validacao-oci.json). A chave do Gemini foi enviada para arquivo privado fora do checkout; não faz parte do Git nem da imagem Docker.
+
+As etapas abaixo permitem reproduzir a implantação em outra instância. Confirme preços e limites antes de provisionar.
 
 ## 1. Preparar a instância
 

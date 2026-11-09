@@ -7,11 +7,23 @@ Agente para consultar o Índice de Preços ao Produtor (IPP) do IBGE usando a pl
 - Implementação local, conversão da base, interface web, testes e Docker disponíveis.
 - Integração Gemini validada localmente em 08/11/2026 com `gemini-3.5-flash-lite` e uma pergunta real da base.
 - Repositório público: [Assoridente/precoemfoco](https://github.com/Assoridente/precoemfoco), com commits e versões de `v0.1.0` a `v1.0.0`.
-- Deploy OCI ainda não realizado. Este README não constitui evidência de deploy.
+- Aplicação publicada na OCI: **[abrir Preço em Foco](http://129.148.23.0:8000)**.
+- Deploy validado em 08/11/2026: saúde da aplicação e pergunta real com resposta `RAG estruturado + Gemini` pelo endereço público.
+- Hospedagem de demonstração em E3 Flex com créditos de avaliação. A máquina não é Always Free; a disponibilidade depende da avaliação e do saldo de créditos.
+
+## Demonstração na OCI
+
+[Aplicação pública](http://129.148.23.0:8000) · [Verificar saúde](http://129.148.23.0:8000/health) · [Registro da validação pública](docs/evidencias/validacao-oci.json)
+
+Pergunta testada: **Qual grupo teve a maior variação mensal em janeiro de 2019?**
+
+Resposta gerada pelo Gemini na VM: o destaque entre os valores disponíveis é o grupo **105 Laticínios, com 5,69%**, acompanhado das seis fontes usadas na comparação. O teste foi realizado por uma requisição HTTP externa à VM.
+
+Infraestrutura: OCI Compute, região São Paulo, Ubuntu 24.04, `VM.Standard.E3.Flex`, 1 OCPU, 4 GB de RAM, Docker e porta pública TCP 8000. A configuração privada do Gemini fica fora do repositório e da imagem Docker.
 
 ![Teste local com resposta gerada pelo Gemini](docs/evidencias/teste-local.png)
 
-A captura acima comprova o teste local; a evidência específica da OCI será adicionada após o deploy.
+A captura acima registra o teste local anterior ao deploy. A validação da OCI está no link público e no registro de teste apresentados acima.
 
 ## Base documental
 
@@ -141,11 +153,11 @@ docker build -t preco-em-foco .
 docker run -d --name preco-em-foco --restart unless-stopped --env-file .env -p 8000:8000 preco-em-foco
 ```
 
-Siga [o roteiro de deploy OCI](docs/OCI.md). Após publicar, substitua os campos abaixo por evidências reais:
+Siga [o roteiro de deploy OCI](docs/OCI.md). Evidências da publicação:
 
 - Repositório público: [Assoridente/precoemfoco](https://github.com/Assoridente/precoemfoco).
-- URL pública na OCI: **pendente**.
-- Captura da aplicação respondendo na OCI: **pendente**.
+- URL pública na OCI: [Preço em Foco](http://129.148.23.0:8000).
+- Validação pública da API e resposta Gemini: [registro JSON](docs/evidencias/validacao-oci.json).
 - Validação local com Gemini: **08/11/2026**, modelo `gemini-3.5-flash-lite`; resposta confirmada de 5,69% para a variação mensal de laticínios em janeiro de 2019.
 
 ## Publicação no GitHub
@@ -158,4 +170,4 @@ git branch -M main
 git push -u origin main
 ```
 
-Se Git pedir autenticação, entre na sua conta. Depois atualize as evidências no README, faça novo commit e envie novamente. Não entregue como concluído antes de validar a URL pública e a geração com IA.
+Se Git pedir autenticação, entre na sua conta. Depois atualize as evidências no README, faça novo commit e envie novamente. A URL pública e a geração com IA desta publicação foram validadas conforme o registro acima.
