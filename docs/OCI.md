@@ -22,8 +22,8 @@ Na VM Ubuntu:
 sudo apt-get update
 sudo apt-get install -y docker.io git
 sudo systemctl enable --now docker
-git clone https://github.com/SEU_USUARIO/preco-em-foco.git
-cd preco-em-foco
+git clone https://github.com/Assoridente/precoemfoco.git
+cd precoemfoco
 cp .env.example .env
 nano .env
 ```

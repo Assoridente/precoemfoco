@@ -6,7 +6,8 @@ Agente para consultar o Índice de Preços ao Produtor (IPP) do IBGE usando a pl
 
 - Implementação local, conversão da base, interface web, testes e Docker disponíveis.
 - Integração Gemini validada localmente em 08/11/2026 com `gemini-3.5-flash-lite` e uma pergunta real da base.
-- Publicação no GitHub e deploy OCI ainda não realizados. Este README não constitui evidência de deploy.
+- Repositório público: [Assoridente/precoemfoco](https://github.com/Assoridente/precoemfoco), com commits e versões de `v0.1.0` a `v1.0.0`.
+- Deploy OCI ainda não realizado. Este README não constitui evidência de deploy.
 
 ![Teste local com resposta gerada pelo Gemini](docs/evidencias/teste-local.png)
 
@@ -142,7 +143,7 @@ docker run -d --name preco-em-foco --restart unless-stopped --env-file .env -p 8
 
 Siga [o roteiro de deploy OCI](docs/OCI.md). Após publicar, substitua os campos abaixo por evidências reais:
 
-- Repositório público: **pendente**.
+- Repositório público: [Assoridente/precoemfoco](https://github.com/Assoridente/precoemfoco).
 - URL pública na OCI: **pendente**.
 - Captura da aplicação respondendo na OCI: **pendente**.
 - Validação local com Gemini: **08/11/2026**, modelo `gemini-3.5-flash-lite`; resposta confirmada de 5,69% para a variação mensal de laticínios em janeiro de 2019.
@@ -152,7 +153,7 @@ Siga [o roteiro de deploy OCI](docs/OCI.md). Após publicar, substitua os campos
 Crie um repositório público e envie este diretório. Antes do envio, confira as permissões de redistribuição do arquivo de origem. Preserve os commits locais e crie novos commits à medida que fizer alterações reais; não é necessário inventar um histórico anterior.
 
 ```bash
-git remote add origin https://github.com/SEU_USUARIO/preco-em-foco.git
+git remote add origin https://github.com/Assoridente/precoemfoco.git
 git branch -M main
 git push -u origin main
 ```
