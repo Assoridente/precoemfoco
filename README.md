@@ -5,10 +5,20 @@ Agente para consultar o Índice de Preços ao Produtor (IPP) do IBGE usando a pl
 ## Estado da entrega
 
 - Implementação local, conversão da base, interface web, testes e Docker disponíveis.
-- Integração Gemini implementada; precisa de chave e modelo para validar chamadas reais.
+- Integração Gemini validada localmente em 08/11/2026 com `gemini-3.5-flash-lite` e uma pergunta real da base.
 - Publicação no GitHub e deploy OCI ainda não realizados. Este README não constitui evidência de deploy.
 
+![Teste local com resposta gerada pelo Gemini](docs/evidencias/teste-local.png)
+
+A captura acima comprova o teste local; a evidência específica da OCI será adicionada após o deploy.
+
 ## Base documental
+
+Documentação complementar:
+
+- [Descrição da base e cenário do desafio](docs/BASE_DOCUMENTAL.md).
+- [Dicionário de dados do CSV](docs/DICIONARIO_DE_DADOS.md).
+- [FAQ e guia de perguntas](docs/FAQ.md).
 
 Tabela 6723, Brasil, fonte indicada no próprio arquivo: IBGE — Índice de Preços ao Produtor. São 2.256 observações, 94 meses de dezembro de 2018 a setembro de 2026, seis grupos industriais e quatro indicadores:
 
@@ -135,7 +145,7 @@ Siga [o roteiro de deploy OCI](docs/OCI.md). Após publicar, substitua os campos
 - Repositório público: **pendente**.
 - URL pública na OCI: **pendente**.
 - Captura da aplicação respondendo na OCI: **pendente**.
-- Data e resultado da validação com Gemini: **pendente**.
+- Validação local com Gemini: **08/11/2026**, modelo `gemini-3.5-flash-lite`; resposta confirmada de 5,69% para a variação mensal de laticínios em janeiro de 2019.
 
 ## Publicação no GitHub
 
