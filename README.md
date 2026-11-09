@@ -1,12 +1,16 @@
-# Preço em Foco — Alura Agent
+# Preço em Foco
+
+**IA aplicada a dados públicos · Python · Gemini · Docker · Oracle Cloud Infrastructure**
+
+[Aplicação na OCI](http://129.148.23.0:8000) · [Arquitetura](#arquitetura) · [Execução local](#execução-local) · [Exemplos](#perguntas-e-respostas-reproduzíveis)
 
 Agente para consultar o Índice de Preços ao Produtor (IPP) do IBGE usando a planilha fornecida `IndicesPreços/IndicesPreços.xlsx`. Responde em português, apresenta valores e identifica as células de origem. Projeto desenvolvido para o Challenge Alura Agente.
 
-## Estado da entrega
+## Visão geral
 
 - Implementação local, conversão da base, interface web, testes e Docker disponíveis.
 - Integração Gemini validada localmente em 08/11/2026 com `gemini-3.5-flash-lite` e uma pergunta real da base.
-- Repositório público: [Assoridente/precoemfoco](https://github.com/Assoridente/precoemfoco), com commits e versões de `v0.1.0` a `v1.0.0`.
+- Repositório público: [Assoridente/precoemfoco](https://github.com/Assoridente/precoemfoco), com histórico de desenvolvimento e versões publicadas.
 - Aplicação publicada na OCI: **[abrir Preço em Foco](http://129.148.23.0:8000)**.
 - Deploy validado em 08/11/2026: saúde da aplicação e pergunta real com resposta `RAG estruturado + Gemini` pelo endereço público.
 - Hospedagem de demonstração em E3 Flex com créditos de avaliação. A máquina não é Always Free; a disponibilidade depende da avaliação e do saldo de créditos.
@@ -21,9 +25,11 @@ Resposta gerada pelo Gemini na VM: o destaque entre os valores disponíveis é o
 
 Infraestrutura: OCI Compute, região São Paulo, Ubuntu 24.04, `VM.Standard.E3.Flex`, 1 OCPU, 4 GB de RAM, Docker e porta pública TCP 8000. A configuração privada do Gemini fica fora do repositório e da imagem Docker.
 
-![Teste local com resposta gerada pelo Gemini](docs/evidencias/teste-local.png)
+![Interface publicada na OCI com resposta do Gemini](docs/evidencias/oci.png)
 
-A captura acima registra o teste local anterior ao deploy. A validação da OCI está no link público e no registro de teste apresentados acima.
+Captura real da aplicação publicada. O [teste local anterior](docs/evidencias/teste-local.png) permanece disponível como registro de desenvolvimento.
+
+O desligamento preventivo da VM está agendado para **15/11/2026 às 23h (Brasília)**. Depois dessa data, consulte as evidências ou execute o projeto localmente. Detalhes em [Deploy OCI](docs/OCI.md).
 
 ## Base documental
 
@@ -161,16 +167,9 @@ Siga [o roteiro de deploy OCI](docs/OCI.md). Evidências da publicação:
 - Validação pública da API e resposta Gemini: [registro JSON](docs/evidencias/validacao-oci.json).
 - Validação local com Gemini: **08/11/2026**, modelo `gemini-3.5-flash-lite`; resposta confirmada de 5,69% para a variação mensal de laticínios em janeiro de 2019.
 
-## Publicação no GitHub
+## Desenvolvimento e versões
 
-Crie um repositório público e envie este diretório. Antes do envio, confira as permissões de redistribuição do arquivo de origem. Preserve os commits locais e crie novos commits à medida que fizer alterações reais; não é necessário inventar um histórico anterior.
+Consulte o [histórico de alterações](CHANGELOG.md) e as [versões publicadas](https://github.com/Assoridente/precoemfoco/tags) para acompanhar a evolução da base, da interface e do deploy.
 
-```bash
-git remote add origin https://github.com/Assoridente/precoemfoco.git
-git branch -M main
-git push -u origin main
-```
+Para contribuir, abra uma issue com o comportamento observado, a pergunta usada e o resultado esperado. Nunca inclua chaves ou arquivos de configuração privados.
 
-Se Git pedir autenticação, entre na sua conta. Depois atualize as evidências no README, faça novo commit e envie novamente. A URL pública e a geração com IA desta publicação foram validadas conforme o registro acima.
-
-![Agente respondendo na OCI](docs/evidencias/oci.png)
