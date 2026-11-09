@@ -4,7 +4,7 @@ Aplicação publicada e validada em 08/11/2026: [http://129.148.23.0:8000](http:
 
 O deploy usa Ubuntu 24.04, Docker, 1 OCPU e 4 GB de RAM em uma `VM.Standard.E3.Flex`, na região São Paulo. E2 Micro e Ampere A1 retornaram falta de capacidade; a alternativa E3 foi autorizada com os créditos da conta de avaliação, identificada no console como Free Tier/Promo. Não foi feito upgrade para Pay As You Go.
 
-A E3 não é Always Free. A demonstração depende do saldo e da validade dos créditos de avaliação. O desligamento programado ainda precisa ser confirmado no console; não considere que já existe um agendamento. O disco pode continuar alocado depois de parar uma VM.
+A E3 não é Always Free. A demonstração depende do saldo e da validade dos créditos de avaliação. Foi criado e habilitado o agendamento parar-preco-em-foco-antes-creditos, com ação Stop em uma única VM, para 16/11/2026 às 02:00 UTC (15/11/2026 às 23:00 em Brasília). A política IAM é restrita ao agendamento, à VM e à permissão INSTANCE_POWER_ACTION. A execução futura ainda deve ser acompanhada; o agendamento não encerra outros recursos. O disco pode continuar alocado depois de parar uma VM.
 
 Foi validado o endpoint público `/health` e uma pergunta respondida por Gemini. O registro está em [evidencias/validacao-oci.json](evidencias/validacao-oci.json). A chave do Gemini foi enviada para arquivo privado fora do checkout; não faz parte do Git nem da imagem Docker.
 
@@ -65,3 +65,9 @@ Aplicação na OCI: [Preço em Foco](http://SEU_IP_PUBLICO:8000)
 Registre a data do teste. Não inclua chaves, tokens ou arquivos `.env` na imagem ou no GitHub. Um print local ou do painel da VM sem a aplicação respondendo não demonstra a aplicação funcionando publicamente.
 
 Para uso contínuo, coloque a aplicação atrás de proxy HTTPS e configure autenticação, limite de requisições e alertas de consumo do provedor. Ao encerrar o projeto, remova os recursos desnecessários para evitar cobrança.
+
+## Evidências da publicação
+
+![Aplicação pública com resposta Gemini](evidencias/oci.png)
+
+![Agendamento preventivo habilitado](evidencias/desligamento-oci.png)

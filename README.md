@@ -157,6 +157,7 @@ Siga [o roteiro de deploy OCI](docs/OCI.md). Evidências da publicação:
 
 - Repositório público: [Assoridente/precoemfoco](https://github.com/Assoridente/precoemfoco).
 - URL pública na OCI: [Preço em Foco](http://129.148.23.0:8000).
+- Captura da aplicação publicada: [print OCI](docs/evidencias/oci.png).
 - Validação pública da API e resposta Gemini: [registro JSON](docs/evidencias/validacao-oci.json).
 - Validação local com Gemini: **08/11/2026**, modelo `gemini-3.5-flash-lite`; resposta confirmada de 5,69% para a variação mensal de laticínios em janeiro de 2019.
 
@@ -171,3 +172,5 @@ git push -u origin main
 ```
 
 Se Git pedir autenticação, entre na sua conta. Depois atualize as evidências no README, faça novo commit e envie novamente. A URL pública e a geração com IA desta publicação foram validadas conforme o registro acima.
+
+![Agente respondendo na OCI](docs/evidencias/oci.png)
