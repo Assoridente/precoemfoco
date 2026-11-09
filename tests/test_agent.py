@@ -3,8 +3,20 @@ from agent import answer, load
 from ingest import convert
 from tempfile import TemporaryDirectory
 from pathlib import Path
+from unittest.mock import patch
+from urllib.error import HTTPError
+from io import BytesIO
 
 class AgentTests(unittest.TestCase):
+    @patch.dict('os.environ', {'GEMINI_API_KEY': 'test-secret', 'GEMINI_MODEL': 'test-model'})
+    def test_provider_failure_is_safe_and_preserves_data(self):
+        error = HTTPError('https://example.com', 429, 'quota', {}, BytesIO(b'test-secret'))
+        with patch('agent.urlopen', side_effect=error):
+            r = answer('Qual a variacao mensal de laticinios em janeiro de 2019?')
+        self.assertIn('HTTP 429', r['aviso'])
+        self.assertNotIn('test-secret', str(r))
+        self.assertIn('5,69%', r['resposta'])
+
     def test_known_value_and_cell(self):
         r = answer('Qual a variação mensal de laticínios em janeiro de 2019?')
         self.assertEqual(r['fontes'][0]['valor'], '5.69')

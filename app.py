@@ -7,7 +7,7 @@ from agent import answer, load
 ROOT = Path(__file__).resolve().parent
 # Carrega .env sem sobrescrever as variáveis configuradas no servidor.
 if (ROOT / '.env').exists():
-    for line in (ROOT / '.env').read_text(encoding='utf-8').splitlines():
+    for line in (ROOT / '.env').read_text(encoding='utf-8-sig').splitlines():
         if line.strip() and not line.lstrip().startswith('#') and '=' in line:
             k, v = line.split('=', 1)
             os.environ.setdefault(k.strip(), v.strip().strip('\"').strip("'"))
@@ -48,4 +48,10 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == '__main__':
     port = int(os.getenv('PORT', '8000'))
     print(f'Preço em Foco: http://localhost:{port}', flush=True)
-    ThreadingHTTPServer(('0.0.0.0', port), Handler).serve_forever()
+    server = ThreadingHTTPServer(('0.0.0.0', port), Handler)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print('\nAplicação encerrada.')
+    finally:
+        server.server_close()
